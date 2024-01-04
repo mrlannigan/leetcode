@@ -1,0 +1,30 @@
+{
+  "name": "x455-assign-cookies-ts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/x455-assign-cookies-ts/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/x455-assign-cookies-ts",
+        "main": "libs/x455-assign-cookies-ts/src/index.ts",
+        "tsConfig": "libs/x455-assign-cookies-ts/tsconfig.lib.json",
+        "assets": ["libs/x455-assign-cookies-ts/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/x455-assign-cookies-ts/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
